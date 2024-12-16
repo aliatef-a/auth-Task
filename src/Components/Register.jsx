@@ -139,7 +139,24 @@ const Register = () => {
                     />
                     {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>
-
+                <div className="mb-4">
+                    <label
+                        htmlFor="mobile"
+                        className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                        رقم الهاتف
+                    </label>
+                    <input
+                        type="text"
+                        id="mobile"
+                        name="mobile"
+                        value={formData.mobile}
+                        onChange={handleChange}
+                        placeholder="أدخل رقم الهاتف"
+                        className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.mobile ? 'border-red-500' : 'border-gray-300'}`}
+                    />
+                    {errors.mobile && <p className="text-red-500 text-sm mt-1">{errors.mobile}</p>}
+                </div>
                 <div className="mb-4">
                     <label
                         htmlFor="password"
@@ -178,24 +195,7 @@ const Register = () => {
                     {errors.password_confirmation && <p className="text-red-500 text-sm mt-1">{errors.password_confirmation}</p>}
                 </div>
 
-                <div className="mb-4">
-                    <label
-                        htmlFor="mobile"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                        رقم الهاتف
-                    </label>
-                    <input
-                        type="text"
-                        id="mobile"
-                        name="mobile"
-                        value={formData.mobile}
-                        onChange={handleChange}
-                        placeholder="أدخل رقم الهاتف"
-                        className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.mobile ? 'border-red-500' : 'border-gray-300'}`}
-                    />
-                    {errors.mobile && <p className="text-red-500 text-sm mt-1">{errors.mobile}</p>}
-                </div>
+
 
                 <button
                     type="submit"
