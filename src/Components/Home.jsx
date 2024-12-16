@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const Home = () => {
     const [userData, setUserData] = useState(null);
     const navigate = useNavigate();
-
+    const { setIsAuthenticated } = useAuth();
     useEffect(() => {
         const storedUser = localStorage.getItem("data");
 
@@ -23,9 +24,9 @@ const Home = () => {
     }, []);
 
     const handleLogout = () => {
-
         localStorage.removeItem("data");
         localStorage.removeItem("token");
+        setIsAuthenticated(false)
         navigate("/register");
     };
 
